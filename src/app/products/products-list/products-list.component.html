@@ -1,0 +1,19 @@
+
+<div class="container-fluid mx-3">
+<p>
+    <ngb-alert *ngIf="message" [dismissible]="true">
+      <strong>Warning!</strong> {{ message }}
+    </ngb-alert>
+  </p>
+
+<div class="ml-3 row col-12">
+ 
+<app-product-row
+  class=" col-9"
+  *ngFor="let p of sortedProducts(null)"
+  [product]="p">
+  <h2 *ngIf="message">{{ message }}</h2></app-product-row>
+  <app-cart class="col-3 float-right"></app-cart>
+
+</div>
+</div>

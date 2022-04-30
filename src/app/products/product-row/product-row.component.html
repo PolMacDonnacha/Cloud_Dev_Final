@@ -1,0 +1,17 @@
+<div class="mx-auto border bg-light">
+
+    <div class="row align-items-center text-center">
+      <img width="250" height="200" class="border" src={{product!.Image}}>
+      <div class="col-4"><h1>{{product!.Name}}</h1>
+        </div>
+        <div class="col-2">
+          <h2>Price</h2>
+          <h2>{{product!.Price|currency}}</h2>
+        </div>
+      <div class="col-3">
+        <button class="w-50 btn btn-primary btn-lg" (click)="clicked(product)" >Add to Cart</button> 
+      </div>
+    
+    </div>
+    </div>
+    

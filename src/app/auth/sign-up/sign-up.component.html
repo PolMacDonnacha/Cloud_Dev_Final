@@ -1,0 +1,30 @@
+<div class="col-md-6 offset-md-3 mt-5 text-center">
+    <div class="card">
+        <h4 class="card-header">Sign Up</h4> 
+          <div class="form-group">
+<form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+    <label for="given_name">First name</label>
+    <input  class="form-control" type="text" ngModel #fnameInput="ngModel" [(ngModel)]="given_name" placeholder="Enter First name" name="given_name" id="given_name" required>
+
+<div class="form-group">
+    <label for="family_name">Last name</label>
+    <input  class="form-control" type="text" ngModel #lnameInput="ngModel" [(ngModel)]="family_name" placeholder="Enter Last name" name="family_name" id="family_name" required>
+</div>  
+
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input  class="form-control" type="text" ngModel #emailInput="ngModel" [(ngModel)]="email" placeholder="Enter Email" name="email" id="email" required>
+</div>  
+
+    <div class="form-group">
+    <label for="psw">Password</label>
+    <input  class="form-control" type="password" name="password" ngModel minlength="8" #passwordInput="ngModel" [(ngModel)]="password" placeholder="Enter Password" id="psw" required>
+</div>  
+    <div>
+    <button class="btn btn-primary" type="submit">Register</button>
+</div>  
+</form>
+</div>  
+        </div>
+
+  </div>

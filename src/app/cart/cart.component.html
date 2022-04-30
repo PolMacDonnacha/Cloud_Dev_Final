@@ -1,0 +1,15 @@
+<div>
+    <h2>Shopping Cart</h2>
+    <div class="row ml-2">
+        <h3 class="col-5"> Name </h3>
+        <h3 class="col-2"> Qty </h3>
+        <h3 class="col-3"> Price </h3>
+    </div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of cartContents">
+        <app-cart-contents [product]="item"></app-cart-contents>
+    </li>
+
+    <button class="btn w-50 btn-lg btn-warning"  (click)="checkout()">Checkout</button>
+</ul>
+</div>

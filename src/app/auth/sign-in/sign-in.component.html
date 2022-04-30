@@ -1,0 +1,17 @@
+<div class="col-md-6 offset-md-3 mt-5 text-center">
+    <div class="card">
+        <h4 class="card-header">Sign In</h4> 
+          <div class="form-group">
+<form (submit)="onSignIn(signInForm)" #signInForm="ngForm">
+    <label for="email"><b>Email address</b></label>
+    <input class="form-control" name="email" ngModel type="email" #emailInput="ngModel" [(ngModel)]="email_address" email placeholder="Enter Username" required>
+    <div class="form-group">
+    <label for="password"><b>Password</b></label>
+    <input class="form-control" [(ngModel)]="password" ngModel type="password" minlength="8" #passwordInput="ngModel" required name="password" placeholder="Enter Password" >
+  </div>
+    <button type="submit">Login</button>
+</form>  
+</div>  
+</div>
+
+</div>

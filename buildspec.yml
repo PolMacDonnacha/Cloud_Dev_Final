@@ -1,0 +1,15 @@
+build:
+    commands:
+      - echo Build started on `date`
+      - printenv
+      - aws s3 cp s3://amplify-amplifyf939554362c04-staging-145037-deployment/environments/ src/ --recursive
+      - docker build -t Hardware-site --build-arg IMAGE_TAG=$IMAGE_TAG .
+      - docker images -a
+      - echo Building the Docker image...
+      - docker tag $APP_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.eu-west-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker images -a
+      # - command
+post_build:
+    commands:
+      - aws s3 cp dist s3://s00189392-hardware/website/ --recursive
+      - echo Build completed on `date`
