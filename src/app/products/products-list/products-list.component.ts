@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Response, IProduct } from 'src/app/models/product';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -18,10 +19,9 @@ export class ProductsListComponent implements OnInit {
   product: IProduct | undefined;
   selectedProduct: IProduct | undefined;
 
-  constructor(private auth: AuthService,private productService: ProductService, ) {
+  constructor(private router: Router,private auth: AuthService,private productService: ProductService, ) {
 
    }
-
 
 
    ngOnInit(): void {
@@ -44,69 +44,6 @@ export class ProductsListComponent implements OnInit {
   });
 }
 
-
-
-
-
-/*
-
-  ngOnInit(): void {
-    this.auth.getAuthenticatedUser()!.getSession((err: any, session: any) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-    this.productService.getProducts(session).subscribe({
-      next: (body: IProduct[] )=> {
-        console.log(JSON.parse(JSON.stringify(body)).body);
-        this.allItems = body;
-        this.body = JSON.parse(JSON.stringify(body)).body;
-        console.table(JSON.parse(JSON.stringify(this.body),));
-
-        console.log(JSON.stringify(this.allItems))
-       // body.body!!.Items.forEach((item: { IProduct: IProduct; }) => {
-       //   this.productList?.push(item.IProduct);
-       // });
-        console.log(`next called`)},
-      
-      complete: () =>{
-      console.table(this.productList),
-       console.log('product service finished')},
-      error: (mess: string) => this.message = mess
-    });
-    this.selectedProduct = null!;
-  });
-}
-
-*/
- /*
-  ngOnInit(): void {
-    this.auth.getAuthenticatedUser()!.getSession((err: any, session: any) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-    this.productService.getProducts(session).subscribe(response=>
-      {
-      console.log(`recieved`);
-      console.log(response);
-      
-      //this.productList = JSON.parse(JSON.stringify(response.body!.Items))});
-      });
-    this.selectedProduct = null!;
-    });
-  }
-
- .subscribe(
-          response => {           
-            return this.getResponse = response as IProduct[];
-          },
-          error => {
-            catchError(this.handleError)
-          }
-        );
-        */
-
   sortedProducts(parameter: any):IProduct[]{
     if (parameter != null){
       switch(parameter){
@@ -122,21 +59,10 @@ export class ProductsListComponent implements OnInit {
     
   }
 
-
-
   clicked (product: IProduct): void {
     if(product != null){
 
     }
   }
- /* updateProduct (_id:string, product: IProduct){
-    this.productService.updateProduct(_id, product)
-    .subscribe({
-      next: product => this.message = `${product.Name} has been modified`,
-      error: (err) => this.message = err
-    });
-  }*/
-
-
 
 }

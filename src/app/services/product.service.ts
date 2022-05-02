@@ -20,16 +20,7 @@ export class ProductService {
 
   constructor(private auth: AuthService, private http: HttpClient, private router: Router) { }
 
- /* updateProduct(id: string,product: IProduct): Observable<IProduct>
-  {
-    console.log(`Updating ${product.Name} product`);
-    let productURI: string = `${this.myDataUri}/${id}`;
-    return this.http.put<IProduct>(productURI,product)
-    .pipe(
-      catchError(this.handleError)
-    )
-  }
-    */
+ 
   getProducts(session:any):Observable<any> {
     var authenticatedUser = this.auth.getAuthenticatedUser();
     //console.log("authenticatedUser");
@@ -55,18 +46,24 @@ export class ProductService {
   
 }
 
-/*  
-        */
+uploadProduct(session: any, prod:any){
+  var authenticatedUser = this.auth.getAuthenticatedUser();
 
-
-
-  /*  console.log("get products called" );
-    let productURI : string = this.myDataUri;
-      return this.http.get(`${productURI}`)
-        .pipe(
-          catchError(this.handleError)
-        )
-    }*/
+    if (authenticatedUser != null) {
+      console.log("We have a user");      
+        const token = session.getIdToken().getJwtToken();    
+        console.log("Sending request");
+        console.log(token);
+        let httpOptions = {
+          
+          headers: new HttpHeaders({
+            'Authorization':  token
+          }),
+          }    
+  this.http.post(this.myDataUri,prod, httpOptions).subscribe(response =>
+    console.log(response))
+}
+}
 
 
   

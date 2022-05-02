@@ -48,11 +48,11 @@ export class ShoppingCartService {
   }
   
   checkout(products:IProduct[], session:any):Boolean{
-
     var authenticatedUser = this.auth.getAuthenticatedUser();
     var productJson = JSON.stringify(products)
-    //console.log("authenticatedUser");
-    //console.log(authenticatedUser == null);
+    console.log('productJson');
+    console.log(productJson);
+
     if (authenticatedUser != null) {
       console.log("We have a user");      
         const token = session.getIdToken().getJwtToken();    
@@ -62,11 +62,13 @@ export class ShoppingCartService {
           
           headers: new HttpHeaders({
             'Authorization':  token
-          }),
+                    }),
           }    
         this.http.post<Response>(this.myDataUri,{productJson}, httpOptions).pipe(
           catchError(this.handleError)
-        )
+        ).subscribe(response=>{
+          console.log(response)
+        });
         this.products = [];
         return true;
 

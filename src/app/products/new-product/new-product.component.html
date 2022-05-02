@@ -1,0 +1,24 @@
+<div class="container">
+
+    <form [formGroup]="productForm"  (ngSubmit)="AddPrduct()">
+        <div class="form-group">
+        <label for="productName">Name</label>
+        <input class="form-control" type="text" id="productName"  formControlName="Name">
+    </div>
+    <div class="form-group">
+        <label for="productName">Category</label>
+        <input class="form-control" type="text" id="productCategoty" formControlName="Category">
+    </div>
+    <div class="form-group">
+        <label for="productName">Price</label>
+        <input class="form-control" type="number" id="productPrice" formControlName="Price">
+    </div>
+    <div>
+        <label for="productImage">Image</label>
+            <input id="productImage" type="file" (change)="imageChanged($event)" type="file" formControlName="Image">
+    </div>
+    <div class="float-right">
+    <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+</div>

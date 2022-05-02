@@ -12,5 +12,5 @@ RUN npm run build -- --prod --configuration $IMAGE_TAG
 FROM public.ecr.aws/nginx/nginx:1.20-alpine
 
 # FROM nginx:1.12.2-alpine
-COPY --from=node /app/dist/Hardware-site /usr/share/nginx/html
+COPY --from=node /app/dist/Hardware-Store /usr/share/nginx/html
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf

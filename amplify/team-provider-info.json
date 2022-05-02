@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyf939554362c04-staging-145037-authRole",
+      "UnauthRoleArn": "arn:aws:iam::557191373232:role/amplify-amplifyf939554362c04-staging-145037-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::557191373232:role/amplify-amplifyf939554362c04-staging-145037-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-amplifyf939554362c04-staging-145037-deployment",
+      "UnauthRoleName": "amplify-amplifyf939554362c04-staging-145037-unauthRole",
+      "StackName": "amplify-amplifyf939554362c04-staging-145037",
+      "StackId": "arn:aws:cloudformation:eu-west-1:557191373232:stack/amplify-amplifyf939554362c04-staging-145037/bb5b15c0-c7cb-11ec-ad17-063d927cbe7f",
+      "AmplifyAppId": "d311dsl2z6x64k"
+    },
+    "categories": {
+      "auth": {
+        "clouddevfinale6c573da": {},
+        "clouddevfinal": {
+          "userPoolId": "eu-west-1_fN0JBBhs2",
+          "userPoolName": "Hardware Pool",
+          "webClientId": "shan0t1bju6vkrk1m6qk47e74",
+          "nativeClientId": "shan0t1bju6vkrk1m6qk47e74"
+        }
+      }
+    }
+  }
+}

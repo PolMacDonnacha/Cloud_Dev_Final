@@ -4,6 +4,7 @@ import { AuthService } from './services/auth.service';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
+import { NewProductComponent } from './products/new-product/new-product.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsListComponent,
+  },
+  {
+    path: 'productForm',
+    component: NewProductComponent,
   }
 ];
 

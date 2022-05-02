@@ -15,7 +15,10 @@
             <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="signedIn == false">Sign in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/products" routerLinkActive="active" *ngIf="signedIn">Products</a>
+            <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/productForm" routerLinkActive="active" *ngIf="signedIn">New Product</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/login" (click)="signOut()" *ngIf="signedIn">Sign out</a>
